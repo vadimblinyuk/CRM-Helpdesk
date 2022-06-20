@@ -17,26 +17,26 @@
 
   ![image](https://user-images.githubusercontent.com/49412112/174676724-30346234-f582-448f-86bf-27e7193feaa8.png)
 
-  client_idx, status_idx, user_idx - Стандартный набор индексов. (В процессе возможна корректировка т.к. на данный момент не понятны условия запросов...)
-  parent_id - Нужен для получения всех "чаилдов" определенного тикета. 
+  **client_idx, status_idx, user_idx** - Стандартный набор индексов. (В процессе возможна корректировка т.к. на данный момент не понятны условия запросов...)
+  **parent_id** - Нужен для получения всех "чаилдов" определенного тикета. 
 
 3. Usrers
 
   ![image](https://user-images.githubusercontent.com/49412112/174677246-e62e7f80-3644-4b28-8c3c-6da9715a346b.png)
 
-  name_idx - Стандартный индекс.
+  **name_idx** - Стандартный индекс.
   
 4. Statusers
 
   ![image](https://user-images.githubusercontent.com/49412112/174677246-e62e7f80-3644-4b28-8c3c-6da9715a346b.png)
 
-  name_idx - Стандартный индекс.
+  **name_idx** - Стандартный индекс.
   
 5. Services 
 
   ![image](https://user-images.githubusercontent.com/49412112/174677246-e62e7f80-3644-4b28-8c3c-6da9715a346b.png)
   
-  name_idx - Стандартный индекс.
+  **name_idx** - Стандартный индекс.
 
 ## Репликация
 
