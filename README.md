@@ -3,7 +3,7 @@
 
 ## Сущности
 1. Clients
-![image](https://user-images.githubusercontent.com/49412112/174675891-903e81d4-1219-4c86-abb4-c724a3a1ecc1.png)
+![image](https://user-images.githubusercontent.com/49412112/174675992-37729a11-7ef1-44b5-930c-a64fbb23e1ef.png)
 
 2. Tickets
 3. Usrers
