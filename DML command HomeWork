@@ -1,0 +1,45 @@
+1. Напишите запрос по своей базе с регулярным выражением, добавьте пояснение, что вы хотите найти.
+
+select * from crm.clients where phone similar to '\+(2|3)%';
+Найти все телефоны которые начинаются на +2 и +3
+
+2. Напишите запрос по своей базе с использованием LEFT JOIN и INNER JOIN, как порядок соединений в FROM влияет на результат? Почему?
+
+select * from crm.clients c
+left join helpdesk.tickets t on c.id = t.client_id
+inner join helpdesk.users u on u.id = t.user_id
+inner join helpdesk.statuses s on s.id = t.status_id
+
+В данном случае первым отработает left join и присоединит к таблице с клиентами все записи с тикитами, 
+соответственно мы будем видеть всех клиентов и у тех клиентов у которых нет тикетов будет NULL.
+Далее выполняется inner join который отфильтровует все строки которые не имеют связи.
+Может стоит добавить что INNER JOIN это внутренний, а LEFT - внешний вид соединения
+Надеюсь я правильно понял вопрос?)
+
+3. Напишите запрос на добавление данных с выводом информации о добавленных строках.
+
+INSERT INTO crm.clients
+(name, phone, email, active)
+VALUES
+('Петр', '+375223108745', 'qwe@qwdf.ru', true),
+('Дмитрий', '+375663338745', 'qwee@qwe.ru', true),
+('Игорь', '+485663308745', 'qzsdfe@qdfe.ru', true),
+('Михаил', '+275623108745', 'qdfe@qdfe.ru', false),
+('Артем', '+975633666745', 'qdf@qwdf.ru', true),
+('Евгений', '+175663155745', 'qdf@qdfe.ru', false)
+returning id;
+
+4. Напишите запрос с обновлением данные используя UPDATE FROM.
+
+update helpdesk.tickets
+set status_id = 3
+from helpdesk.statuses
+where helpdesk.tickets.status_id = helpdesk.statuses.id
+and helpdesk.statuses.name = 'в работе';
+
+5. Напишите запрос для удаления данных с оператором DELETE используя join с другой таблицей с помощью using.
+
+delete from helpdesk.tickets
+using crm.clients_services 
+where helpdesk.tickets.client_id = crm.clients_services.client_id
+and crm.clients_services.client_id = 7;
