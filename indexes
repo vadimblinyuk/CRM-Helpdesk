@@ -1,0 +1,19 @@
+1. Создать индекс к какой-либо из таблиц вашей БД
+CREATE INDEX passenger_name_idx ON tickets (passenger_name);
+
+explain
+select * from tickets where passenger_name = 'TATYANA ANDREEVA';
+
+"Bitmap Heap Scan on tickets  (cost=52.55..9018.07 rows=4145 width=120)"
+"  Recheck Cond: (passenger_name = 'TATYANA ANDREEVA'::text)"
+"  ->  Bitmap Index Scan on passenger_name_idx  (cost=0.00..51.51 rows=4145 width=0)"
+"        Index Cond: (passenger_name = 'TATYANA ANDREEVA'::text)"
+
+
+Реализовать индекс для полнотекстового поиска
+Реализовать индекс на часть таблицы или индекс
+на поле с функцией
+Создать индекс на несколько полей
+Написать комментарии к каждому из индексов
+Описать что и как делали и с какими проблемами
+столкнулись
