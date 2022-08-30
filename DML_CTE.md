@@ -1,9 +1,9 @@
 **1. Написать запрос суммы очков с группировкой и сортировкой по годам**
 
-select s.year_game, sum(s.points) 
-from statistic s 
-group by s.year_game 
-order by s.year_game DESC;
+select s.year_game, sum(s.points)  
+from statistic s  
+group by s.year_game  
+order by s.year_game DESC; 
 
 **2. Написать cte показывающее тоже самое**
 
